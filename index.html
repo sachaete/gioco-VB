@@ -18,7 +18,14 @@ console.log()
   };
   
 bottone.addEventListener("click", onButtonClick);
-    
+
+var onMouseOver = function(e) {
+console.log(e);
+bottone.style.top = e.clientY + "100";
+bottone.style.left = e.clientX + "100";
+};
+
+bottone.addEventListener("mouseover", onMouse);
     
     
     
