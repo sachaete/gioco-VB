@@ -1,8 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gioco di Sacha</title>
- 
+  <title>Gioco</title>
+  <h1>Se Schiacci il bottone diventi milionario</h1>
+  <button id="clicca">Non Mi prendi</button>
+  
   
 <head>
   <body>
+   <br><br><div id="vinto"></div>
+<script>    
+    
+var bottone = document.getElementById("clicca");
+var onButtonClick = function() {
+console.log()
+	document.getElementById("vinto").textContent = "BRAVO, DIVENTERAI RICCO!!!";
+  };
+  
+bottone.addEventListener("click", onButtonClick);
+    
+    
+    
+    
+    
+    </script>
+   </body>
+</html>
