@@ -29,14 +29,15 @@ console.log(e)
 bottone.addEventListener("click", onButtonClick);
 
 var onMouseOver = function() {
-bottone.style.background = "red";
+bottone.style.background = "green";
 
 var firstTop = Math.floor(Math.random() * 100);
 var firstLeft = Math.floor(Math.random() * 100);
+bottone.style.postion = "absolute";
 bottone.style.top = firstTop + "px";
 bottone.style.left = firstLeft + "px";
 }
-bottone.addEventListener("mouseover", mouseOver);
+bottone.addEventListener("mouseover", onMouseOver);
 
 </script>
   </body>
