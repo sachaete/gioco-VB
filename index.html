@@ -2,34 +2,47 @@
 <html>
 <head>
   <title>Gioco</title>
-  <h1>Se Schiacci il bottone diventi milionario</h1>
-  <button id="clicca">Non Mi prendi</button>
+  <h1 id="titolo" class="title">Se Schiacci il bottone diventi milionario</h1>
+  <button id="clicca" class="premi">Non Mi prendi</button>
   
-  
+<style>
+#clicca {
+
+position: absolute;
+top: 80px;
+left: 20px;
+}
+
+#titolo {
+background: yellow;
+}
+</style>  
 <head>
   <body>
    <br><br><div id="vinto"></div>
-<script>    
-    
+<script>   
 var bottone = document.getElementById("clicca");
-var onButtonClick = function() {
-console.log()
+var onButtonClick = function(e) {
+console.log(e)
 	document.getElementById("vinto").textContent = "BRAVO, DIVENTERAI RICCO!!!";
-  };
-  
+  }
 bottone.addEventListener("click", onButtonClick);
 
-var onMouseOver = function(e) {
-console.log(e);
-bottone.style.top = e.clientY + "100";
-bottone.style.left = e.clientX + "100";
-};
+var onMouseOver = function() {
+bottone.style.background = "red";
 
-bottone.addEventListener("mouseover", onMouse);
+var firstTop = Math.floor(Math.random() * 100);
+var firstLeft = Math.floor(Math.random() * 100);
+bottone.style.top = firstTop + "px";
+bottone.style.left = firstLeft + "px";
+}
+bottone.addEventListener("mouseover", mouseOver);
+
+</script>
+  </body>
+<html>
+
+
+
+
     
-    
-    
-    
-    </script>
-   </body>
-</html>
