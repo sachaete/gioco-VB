@@ -3,16 +3,14 @@
 <head>
   <title>Gioco</title>
   <h1 id="titolo" class="title">Se Schiacci il bottone diventi milionario</h1>
-  <button id="clicca" class="premi">Non Mi prendi</button>
+  <button id="clicca" class="premi"><strong>Non Mi prendi</strong></button>
   
 <style>
 #clicca {
-
 position: absolute;
 top: 80px;
 left: 20px;
 }
-
 #titolo {
 background: yellow;
 }
@@ -20,6 +18,8 @@ background: yellow;
 <head>
   <body>
    <br><br><div id="vinto"></div>
+   <span id="countdown">10</span> 
+   
 <script>   
 var bottone = document.getElementById("clicca");
 var onButtonClick = function(e) {
@@ -27,18 +27,32 @@ console.log(e)
 	document.getElementById("vinto").textContent = "BRAVO, DIVENTERAI RICCO!!!";
   }
 bottone.addEventListener("click", onButtonClick);
-
 var onMouseOver = function() {
 bottone.style.background = "green";
-
-var firstTop = Math.floor(Math.random() * 100);
-var firstLeft = Math.floor(Math.random() * 100);
+var firstTop = Math.floor(Math.random() * 500);
+var firstLeft = Math.floor(Math.random() * 500);
 bottone.style.postion = "absolute";
 bottone.style.top = firstTop + "px";
 bottone.style.left = firstLeft + "px";
 }
 bottone.addEventListener("mouseover", onMouseOver);
 
+ var countdown = document.getElementById("countdown");
+ var countItDown = function() {
+    var tempoRestante = parseFloat(countdown.textContent);
+    if (tempoRestante > 0) {
+       countdown.textContent = tempoRestante - 1;   
+    } else {
+        window.clearInterval(countdown);
+        countdown.textContent = "HAI PERSO SEI SCARSO";
+        bottone.disabled = true;
+    }
+    
+  };
+  
+ var timer = window.setInterval(countItDown, 1000);
+ 
+ 
 </script>
   </body>
 <html>
